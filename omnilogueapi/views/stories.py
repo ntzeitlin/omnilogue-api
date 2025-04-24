@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework.viewsets import ViewSet
 from omnilogueapi.models import Story
 from .users import UserSerializer
+from .categories import CategorySerializer
 
 
 class StoryViewSet(ViewSet):
@@ -25,6 +26,7 @@ class StoryOverviewSerializer(serializers.ModelSerializer):
     """JSON Serializer for story overview"""
 
     author = UserSerializer(many=False, read_only=True)
+    category = CategorySerializer(many=False, read_only=True)
 
     class Meta:
         model = Story
