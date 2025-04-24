@@ -1,0 +1,74 @@
+[
+    {
+        "model": "omnilogueapi.userprofile",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "biography": "Full-stack developer and tech educator with a passion for creating intuitive learning experiences. Founder of several tech education platforms and enthusiastic writer on JavaScript and web development.",
+            "avatar_link": "https://api.dicebear.com/7.x/personas/svg?seed=Ryan",
+            "website": "https://ryantanay.com",
+            "display_name": "Ryan Tanay",
+            "location": "Nashville, TN"
+        }
+    },
+    {
+        "model": "omnilogueapi.userprofile",
+        "pk": 2,
+        "fields": {
+            "user": 2,
+            "biography": "Software engineer specializing in web technologies and technical leadership. Speaker at tech conferences and advocate for diversity in tech. Enjoys writing technical tutorials and sci-fi short stories.",
+            "avatar_link": "https://api.dicebear.com/7.x/personas/svg?seed=Meg",
+            "website": "https://megducharme.dev",
+            "display_name": "Meg Ducharme",
+            "location": "Boston, MA"
+        }
+    },
+    {
+        "model": "omnilogueapi.userprofile",
+        "pk": 3,
+        "fields": {
+            "user": 3,
+            "biography": "Creative writer and educator with a background in English literature. Loves exploring the intersection of technology and storytelling. Currently working on a fantasy novel series.",
+            "avatar_link": "https://api.dicebear.com/7.x/personas/svg?seed=Jenna",
+            "website": "https://jennasolis.com",
+            "display_name": "Jenna Solis",
+            "location": "Austin, TX"
+        }
+    },
+    {
+        "model": "omnilogueapi.userprofile",
+        "pk": 4,
+        "fields": {
+            "user": 4,
+            "biography": "Data scientist and machine learning engineer with expertise in natural language processing. Published author on computational linguistics and avid reader of science fiction.",
+            "avatar_link": "https://api.dicebear.com/7.x/personas/svg?seed=Bryan",
+            "website": "https://bryannilson.ai",
+            "display_name": "Bryan Nilson",
+            "location": "Seattle, WA"
+        }
+    },
+    {
+        "model": "omnilogueapi.userprofile",
+        "pk": 5,
+        "fields": {
+            "user": 5,
+            "biography": "Linguist and technical writer specializing in documentation for developer tools. Enjoys crafting clear explanations of complex topics and writing historical fiction in her spare time.",
+            "avatar_link": "https://api.dicebear.com/7.x/personas/svg?seed=Emily",
+            "website": "https://emilylemmon.com",
+            "display_name": "Emily Lemmon",
+            "location": "Portland, OR"
+        }
+    },
+    {
+        "model": "omnilogueapi.userprofile",
+        "pk": 6,
+        "fields": {
+            "user": 6,
+            "biography": "Frontend developer and UI/UX enthusiast with a background in graphic design. Creates interactive storytelling experiences and publishes web comics about the tech industry.",
+            "avatar_link": "https://api.dicebear.com/7.x/personas/svg?seed=Tyler",
+            "website": "https://tylerhilliard.design",
+            "display_name": "Tyler Hilliard",
+            "location": "Denver, CO"
+        }
+    }
+]

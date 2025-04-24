@@ -7,4 +7,4 @@ python3 manage.py makemigrations omnilogueapi
 python3 manage.py migrate omnilogueapi
 python3 manage.py loaddata users
 python3 manage.py loaddata tokens
-
+python3 manage.py loaddata userprofiles
