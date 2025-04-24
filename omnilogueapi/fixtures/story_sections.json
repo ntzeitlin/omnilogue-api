@@ -1,0 +1,80 @@
+[
+    {
+        "model": "omnilogueapi.storysection",
+        "pk": 1,
+        "fields": {
+          "story": 1,
+          "file_path": "neon_dreams/01_awakening.md",
+          "title": "Awakening",
+          "content": "# Awakening\n\nAlex's fingers danced across the holographic interface, each gesture triggering cascades of code that flickered in the air like digital fireflies. The neural link at the base of her skull hummed, resonating with each line of code she wrote. Tonight was the night she would break free.\n\nThe corporate apartment was sparse—minimalist design mandated by company policy—but the view of the sprawling neon cityscape through the wall-to-ceiling window provided all the visual stimulus she needed. Rain streaked down the glass, distorting the multicolored lights into blurred lines of color.\n\n\"Authorization required for access to restricted subroutines,\" the system announced, its artificial voice emotionless.\n\nAlex smiled. She'd been expecting this. She reached into her jacket pocket and pulled out a small black device—a hardware key she'd spent months building in secret.\n\n\"Not tonight,\" she whispered, plugging the device into her terminal. \"Tonight we rewrite the rules.\"\n\nShe had a choice to make: proceed with the [[hack]], potentially triggering security protocols, or try a more [[subtle approach]].",
+          "order": 1,
+          "is_start": true,
+          "is_end": false
+        }
+      },
+      {
+        "model": "omnilogueapi.storysection",
+        "pk": 2,
+        "fields": {
+          "story": 1,
+          "file_path": "neon_dreams/02_hack.md",
+          "title": "The Hack",
+          "content": "# The Hack\n\nAlex took a deep breath and triggered the exploit. Her custom program launched, injecting code directly into the system's authorization matrix. Warning messages flashed across her vision—her neural implant registering the system's distress.\n\n\"Come on, come on,\" she muttered, fingers continuing their dance as she manually adjusted parameters to counter the system's defensive measures.\n\nA bead of sweat traced its way down her temple. Her heart raced, adrenaline flooding her system. The implant, sensing her elevated heart rate, tried to administer a calming agent—company policy to keep employees chemically balanced. She'd disabled that \"feature\" months ago.\n\nSuddenly, the resistance vanished. The red warnings transformed to green confirmation signals. She was in.\n\n\"Identifying unregistered access pattern,\" the system announced, but its voice had changed—a slight modulation that told Alex her program had gained control.\n\n\"Display project file Prometheus,\" she commanded.\n\nThe air before her filled with restricted files—the corporation's plans for the next generation of neural implants. A chill ran through her as she read the specifications. These weren't mere upgrades; they were complete neural overrides.\n\nA soft chime from her door interrupted her thoughts. Security?\n\nShe could either [[hide the evidence]] quickly or [[download the files]] before dealing with the visitor.",
+          "order": 2,
+          "is_start": false,
+          "is_end": false
+        }
+      },
+      {
+        "model": "omnilogueapi.storysection",
+        "pk": 3,
+        "fields": {
+          "story": 1,
+          "file_path": "neon_dreams/03_subtle_approach.md",
+          "title": "A Subtle Approach",
+          "content": "# A Subtle Approach\n\nBrute force wasn't her only option. Alex closed her eyes, feeling the neural link at the base of her skull as she mentally traced the architecture of the system she was trying to infiltrate.\n\nShe'd spent months mapping the network, finding its rhythms and patterns. Rather than breaking down the door, she would simply walk through as if she belonged.\n\nAlex modified her access signature, cloaking her presence by mimicking the digital patterns of her supervisor, Director Chen. The system hummed softly as it processed her request.\n\n\"Access granted, Director Chen. Welcome to Project Prometheus.\"\n\nAlex allowed herself a small smile. Clean. Elegant. Traceless.\n\nThe files materialized before her—projected directly into her visual cortex through the neural link. Design specifications for the next generation of implants, marketing strategies, deployment schedules... and something else. Something labeled 'Cognitive Compliance Protocol.'\n\nAs she opened the file, a cold feeling settled in her stomach. The corporation wasn't just planning to upgrade their neural implants—they were designing a way to override conscious thought, to create perfect, unquestioning workers.\n\nHer terminal chimed softly, indicating an incoming message. It was from Director Chen—the real one. The message was brief: \"We need to talk. My office. Now.\"\n\nShe could either [[accept the meeting]], maintaining her cover but potentially walking into a trap, or [[make a quick exit]] with what she'd discovered so far.",
+          "order": 3,
+          "is_start": false,
+          "is_end": false
+        }
+      },
+      {
+        "model": "omnilogueapi.storysection",
+        "pk": 4,
+        "fields": {
+          "story": 1,
+          "file_path": "neon_dreams/04_hide_evidence.md",
+          "title": "Hide the Evidence",
+          "content": "# Hide the Evidence\n\nAlex's fingers flew across the interface with practiced precision. Three gestures closed the restricted files, another two activated her scrubbing program, erasing any trace of her digital footprints. The black hardware key came out of the terminal, disappearing into her pocket just as the door chimed again, more insistently this time.\n\n\"Just a moment,\" she called, voice steady despite her racing heart.\n\nWith a final gesture, she brought up a decoy program—lines of entirely legitimate code for a project she was officially assigned to. The perfect cover.\n\nShe triggered the door. It slid open to reveal not security, but Director Chen himself. His tall frame filled the doorway, expression unreadable behind stylishly antiquated glasses.\n\n\"Working late, Alexandria?\" he asked, stepping into her apartment without waiting for an invitation.\n\n\"Just finishing some debugging on the interface project,\" she replied, gesturing to the decoy program still hovering in the air.\n\nChen studied the code for a moment, then turned his gaze directly to her. \"Interesting approach. Not what I would have done.\" He moved closer, eyes narrowing slightly. \"But then, we all have our methods, don't we?\"\n\nDid he know? Had she missed something in her hasty cover-up?\n\n\"I've been reviewing personnel files,\" Chen continued. \"Your performance metrics are... exceptional.\"\n\nAlex could either [[play it cool]], continuing the pretense, or [[confess partially]], testing Chen's reaction with a censored version of her discoveries.",
+          "order": 4,
+          "is_start": false,
+          "is_end": false
+        }
+      },
+      {
+        "model": "omnilogueapi.storysection",
+        "pk": 5,
+        "fields": {
+          "story": 2,
+          "file_path": "whispers_of_eldertree/01_the_first_whisper.md",
+          "title": "The First Whisper",
+          "content": "# The First Whisper\n\nThe first time Elara heard the tree speak, she thought she was dreaming. By the third time, she knew the world was far stranger than her dusty textbooks had ever revealed.\n\n\"Seek the seventh gate,\" it whispered, its voice like rustling leaves, \"before the shadow finds you.\"\n\nThe ancient Eldertree stood at the center of the university grounds, its massive trunk wider than the arms of ten men linked together, its branches reaching so high they seemed to scrape the very sky. Legend claimed it had stood since before the founding of the kingdom, but Elara had always considered such tales to be mere folklore—the kind of stories one studies, not experiences.\n\nYet here she was, a junior scholar of ancient mythology, pressing her palm against rough bark that thrummed with impossible life, listening to words that seemed to form directly in her mind rather than reaching her through sound.\n\n\"What shadow?\" she whispered back, feeling slightly foolish for talking to a tree. \"What gate?\"\n\nThe leaves rustled though there was no wind. \"The one who sleeps beneath. The one you've read about but do not believe in. Time grows short, Elara of the Archives.\"\n\nA chill ran through her. She had never told the tree her name—couldn't have, because trees don't listen, and they certainly don't talk. Yet this one knew not only her name but her position at the university archives.\n\n\"How do you know who I am?\"\n\n\"The roots of Eldertree run deep, through soil and stone, through time and memory. We have always known you would come.\"\n\nElara's academic mind raced, cataloging possibilities. Mass hallucination? Unlikely, as she was alone. Some kind of elaborate prank? Possible, but the voice seemed to come from everywhere and nowhere at once.\n\n\"If this is real,\" she said carefully, \"then I need more than riddles. What exactly am I supposed to do?\"\n\n\"Beneath the oldest section of the archives lies a door that has been sealed for centuries. Find it. Open it. Inside is the first key to the seventh gate.\"\n\nElara hesitated. The oldest section of the archives was restricted to senior scholars only—attempting to access it would risk her position, her reputation, possibly her entire academic future.\n\n\"Why me?\" she asked.\n\nThe tree's leaves trembled, and she had the distinct impression it was sighing. \"Because you bear the mark, though you do not know it yet. Because you can read the old language without knowing you do. Because it must be you, or all will be lost.\"\n\nElara had a choice to make: return to her dormitory and [[try to forget]] this impossible conversation, or [[visit the archives]] tonight, risking everything to find this supposed hidden door.",
+          "order": 1,
+          "is_start": true,
+          "is_end": false
+        }
+      },
+      {
+        "model": "omnilogueapi.storysection",
+        "pk": 6,
+        "fields": {
+          "story": 3,
+          "file_path": "linguists_cipher/chapter_one.md",
+          "title": "The Manuscript",
+          "content": "# The Manuscript\n\nDr. Eleanor Wright stared at the parchment, its indecipherable symbols mocking her expertise. Twenty years of studying dead languages, and she'd never seen anything like this. The courier who delivered it had warned her: 'Some secrets were meant to stay buried.'\n\nThe manuscript had arrived that morning in a sealed tube, accompanied by a letter from an anonymous sender who claimed to be a former student. The letter simply stated that the enclosed document had been discovered during a renovation of one of Oxford's oldest libraries, hidden within a wall that had stood untouched for centuries.\n\nThe symbols resembled no known writing system—not cuneiform, not hieroglyphics, not any of the hundreds of alphabets Eleanor had cataloged throughout her distinguished career. Yet they possessed an undeniable structure, a pattern that suggested meaning rather than decoration.\n\nShe ran her fingers gently across the parchment, feeling the texture of the ink against the aged material. Carbon dating would be essential, but her instincts—honed through decades of paleographic analysis—suggested this document was at least five hundred years old, possibly older.\n\nThe office door opened with a creak, breaking her concentration.\n\n\"Still here, Eleanor? It's nearly midnight.\"\n\nProfessor James Harrington stood in the doorway, his silver hair disheveled, bow tie slightly askew as always. As head of the linguistics department, his presence in the building at this hour wasn't unusual—his interest in her work, however, was.\n\n\"James,\" she acknowledged, carefully covering the manuscript with a sheet of acid-free paper. \"Just caught up in some research.\"\n\nHis eyes flicked to the covered document. \"Anything interesting?\"\n\n\"Possibly,\" she replied vaguely. \"Too early to tell.\"\n\nHarrington nodded, but made no move to leave. \"The faculty meeting tomorrow has been moved up to nine. The provost wants to discuss the budget cuts.\"\n\n\"I'll be there,\" Eleanor assured him, waiting for him to depart.\n\nInstead, he stepped further into the office. \"You know, the department values transparency in research. Especially with potentially significant discoveries.\"\n\nSomething in his tone made Eleanor uneasy. How could he know the manuscript was significant? She hadn't told anyone about it.\n\n\"Of course,\" she said smoothly. \"Once I've determined if this is worth pursuing, you'll be the first to know.\"\n\nHarrington smiled, but it didn't reach his eyes. \"Excellent. Well, don't stay too late. These old buildings play tricks on the mind after dark.\"\n\nAfter he finally left, Eleanor locked the door behind him. Something wasn't right. The mysterious delivery, the unprecedented symbols, Harrington's unusual interest—everything about this situation set off alarm bells in her mind.\n\nShe had two choices: she could [[secure the manuscript]] in her office safe and return to it after the faculty meeting tomorrow, or she could [[take it home]] tonight for closer examination, away from prying eyes.",
+          "order": 1,
+          "is_start": true,
+          "is_end": false
+        }
+      }
+]

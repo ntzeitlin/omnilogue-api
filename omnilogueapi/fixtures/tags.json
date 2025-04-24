@@ -1,0 +1,72 @@
+[
+    {
+    "model": "omnilogueapi.tag",
+    "pk": 1,
+    "fields": {
+      "name": "Cyberpunk"
+    }
+  },
+  {
+    "model": "omnilogueapi.tag",
+    "pk": 2,
+    "fields": {
+      "name": "Dragons"
+    }
+  },
+  {
+    "model": "omnilogueapi.tag",
+    "pk": 3,
+    "fields": {
+      "name": "Space Opera"
+    }
+  },
+  {
+    "model": "omnilogueapi.tag",
+    "pk": 4,
+    "fields": {
+      "name": "Time Travel"
+    }
+  },
+  {
+    "model": "omnilogueapi.tag",
+    "pk": 5,
+    "fields": {
+      "name": "Detective"
+    }
+  },
+  {
+    "model": "omnilogueapi.tag",
+    "pk": 6,
+    "fields": {
+      "name": "Magic System"
+    }
+  },
+  {
+    "model": "omnilogueapi.tag",
+    "pk": 7,
+    "fields": {
+      "name": "AI"
+    }
+  },
+  {
+    "model": "omnilogueapi.tag",
+    "pk": 8,
+    "fields": {
+      "name": "Medieval"
+    }
+  },
+  {
+    "model": "omnilogueapi.tag",
+    "pk": 9,
+    "fields": {
+      "name": "Noir"
+    }
+  },
+  {
+    "model": "omnilogueapi.tag",
+    "pk": 10,
+    "fields": {
+      "name": "Tutorial"
+    }
+  }
+]
