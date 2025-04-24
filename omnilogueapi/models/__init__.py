@@ -1,1 +1,3 @@
-from .UserProfile import UserProfile
+from .user_profile import UserProfile
+from .story import Story
+from .category import Category

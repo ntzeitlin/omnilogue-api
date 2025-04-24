@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from .category import Category
 
 
 class Story(models.Model):
@@ -14,6 +15,6 @@ class Story(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)  # Add a timestamp on creation
     updated_at = models.DateTimeField(auto_now=True)  # Add a timestamp on each save
     category = models.ForeignKey(
-        "Category", on_delete=models.CASCADE, related_name="stories_in_category"
+        Category, on_delete=models.CASCADE, related_name="stories_in_category"
     )
     is_interactive = models.BooleanField(default=False)
