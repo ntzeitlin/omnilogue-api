@@ -1,9 +1,12 @@
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework.routers import DefaultRouter
-from omnilogueapi.views import UserViewSet
+from omnilogueapi.views import UserViewSet, StoryViewSet
 
 router = DefaultRouter(trailing_slash=False)
+
+router.register(r"stories", StoryViewSet, "story")
+
 
 urlpatterns = [
     path("", include(router.urls)),
