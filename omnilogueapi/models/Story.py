@@ -18,3 +18,16 @@ class Story(models.Model):
         Category, on_delete=models.CASCADE, related_name="stories_in_category"
     )
     is_interactive = models.BooleanField(default=False)
+
+    @property
+    def average_rating(self):
+        ratings = self.reviews.all()
+
+        if not ratings.exists():
+            return None
+
+        total_rating = 0
+        for review in ratings:
+            total_rating += review.rating
+
+        return round(total_rating / ratings.count(), 2)

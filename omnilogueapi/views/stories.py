@@ -5,6 +5,8 @@ from rest_framework.viewsets import ViewSet
 from omnilogueapi.models import Story
 from .users import UserSerializer
 from .categories import CategorySerializer
+from .story_tags import StoryTagSerializer
+from .story_sections import StorySectionSerializer
 
 
 class StoryViewSet(ViewSet):
@@ -21,13 +23,58 @@ class StoryViewSet(ViewSet):
         except Exception as ex:
             return HttpResponseServerError(ex)
 
+    def retrieve(self, request, pk=None):
+        try:
+            story = Story.objects.get(pk=pk)
+            serializer = StoryDetailSerializer(story, many=False)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        except Story.DoesNotExist:
+            return Response(None, status=status.HTTP_404_NOT_FOUND)
+        except Exception as ex:
+            return Response({"reason": ex.args[0]}, status=status.HTTP_400_BAD_REQUEST)
 
+
+# SERIALIZERS:
 class StoryOverviewSerializer(serializers.ModelSerializer):
     """JSON Serializer for story overview"""
 
     author = UserSerializer(many=False, read_only=True)
     category = CategorySerializer(many=False, read_only=True)
+    story_tags = StoryTagSerializer(many=True)
+    average_rating = serializers.ReadOnlyField()
 
     class Meta:
         model = Story
-        fields = ("id", "author", "title", "subtitle", "category", "story_tags")
+        fields = (
+            "id",
+            "is_public",
+            "author",
+            "title",
+            "subtitle",
+            "category",
+            "story_tags",
+            "average_rating",
+        )
+
+
+class StoryDetailSerializer(serializers.ModelSerializer):
+    author = UserSerializer(many=False, read_only=True)
+    category = CategorySerializer(many=False, read_only=True)
+    story_tags = StoryTagSerializer(many=True)
+    sections = StorySectionSerializer(many=True)
+    average_rating = serializers.ReadOnlyField()
+
+    class Meta:
+        model = Story
+        fields = (
+            "id",
+            "author",
+            "title",
+            "subtitle",
+            "description",
+            "excerpt",
+            "category",
+            "story_tags",
+            "average_rating",
+            "sections",
+        )
