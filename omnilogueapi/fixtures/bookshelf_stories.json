@@ -1,0 +1,56 @@
+[
+    {
+        "model": "omnilogueapi.bookshelfstory",
+        "pk": 1,
+        "fields": {
+            "story": 1,
+            "bookshelf": 1,
+            "created_at": "2022-11-03T14:22:18.764Z"
+        }
+    },
+    {
+        "model": "omnilogueapi.bookshelfstory",
+        "pk": 2,
+        "fields": {
+            "story": 3,
+            "bookshelf": 2,
+            "created_at": "2022-11-03T14:22:19.764Z"
+        }
+    },
+    {
+        "model": "omnilogueapi.bookshelfstory",
+        "pk": 3,
+        "fields": {
+            "story": 4,
+            "bookshelf": 3,
+            "created_at": "2022-11-05T11:12:45.233Z"
+        }
+    },
+    {
+        "model": "omnilogueapi.bookshelfstory",
+        "pk": 4,
+        "fields": {
+            "story": 2,
+            "bookshelf": 4,
+            "created_at": "2022-11-06T08:33:09.412Z"
+        }
+    },
+    {
+        "model": "omnilogueapi.bookshelfstory",
+        "pk": 5,
+        "fields": {
+            "story": 1,
+            "bookshelf": 5,
+            "created_at": "2022-11-06T16:55:17.321Z"
+        }
+    },
+    {
+        "model": "omnilogueapi.bookshelfstory",
+        "pk": 6,
+        "fields": {
+            "story": 2,
+            "bookshelf": 6,
+            "created_at": "2022-11-07T13:28:51.489Z"
+        }
+    }
+]

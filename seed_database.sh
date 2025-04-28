@@ -17,3 +17,4 @@ python3 manage.py loaddata story_links
 python3 manage.py loaddata bookshelves
 python3 manage.py loaddata reviews
 python3 manage.py loaddata story_reading_histories
+python3 manage.py loaddata bookshelf_stories

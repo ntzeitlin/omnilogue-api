@@ -8,3 +8,4 @@ from .review import Review
 from .tag import Tag
 from .story_tag import StoryTag
 from .story_reading_history import StoryReadingHistory
+from .bookshelf_story import BookshelfStory
