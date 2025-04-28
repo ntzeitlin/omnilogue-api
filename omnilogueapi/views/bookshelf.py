@@ -2,8 +2,9 @@ from django.http import HttpResponseServerError
 from rest_framework import serializers, status
 from rest_framework.response import Response
 from rest_framework.viewsets import ViewSet
-from omnilogueapi.models import Story, UserProfile, BookshelfStory
 from .stories import StoryOverviewSerializer
+from rest_framework.decorators import action
+from omnilogueapi.models import Story, UserProfile, BookshelfStory
 
 # ViewSet to handle GET, PUT, DELETE from bookshelf
 # Bookshelf View
@@ -17,12 +18,47 @@ class BookshelfViewSet(ViewSet):
     def list(self, request):
         current_user = UserProfile.objects.get(user=request.auth.user)
         bookshelf_stories = current_user.user.bookshelf.stories
-        serializer = BookshelfSerializer(bookshelf_stories, many=True)
+        serializer = BookshelfStorySerializer(bookshelf_stories, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+    # Method for adding a story
+    # POST /bookshelves/story
+
+    # Method for deleting a story
+    # DELETE /bookshelves/story
+
+    @action(methods=["post", "delete"], detail=False)
+    def story(self, request):
+        # get current bookshelf
+        current_user = UserProfile.objects.get(user=request.auth.user)
+        bookshelf = current_user.user.bookshelf
+
+        if request.method == "POST":
+            try:
+                story_to_add = Story.objects.get(pk=request.data["story_id"])
+            except Story.DoesNotExist as ex:
+                return Response(
+                    {"message": ex.args[0]}, status=status.HTTP_404_NOT_FOUND
+                )
+            except Exception as ex:
+                return Response(
+                    {"message": ex.args[0]},
+                    status=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                )
+
+            if bookshelf.stories.filter(story=story_to_add):
+                return Response(
+                    {"message": "Story already in bookshelf"},
+                    status=status.HTTP_403_FORBIDDEN,
+                )
+
+            BookshelfStory.objects.create(bookshelf=bookshelf, story=story_to_add)
+            serializer = BookshelfStorySerializer(bookshelf.stories, many=True)
+            return Response(serializer.data, status=status.HTTP_200_OK)
 
 
 # SERIALIZERS
-class BookshelfSerializer(serializers.ModelSerializer):
+class BookshelfStorySerializer(serializers.ModelSerializer):
     story = StoryOverviewSerializer(many=False)
 
     class Meta:

@@ -11,6 +11,6 @@ class Bookshelf(models.Model):
 
 
 @receiver(post_save, sender=User)
-def create_user_bookshelf(sender, instance, created, **kwargs):
+def create_user_bookshelf(instance, created, **kwargs):
     if created:
         Bookshelf.objects.create(user=instance)
