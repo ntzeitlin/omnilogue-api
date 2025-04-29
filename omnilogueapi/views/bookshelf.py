@@ -21,25 +21,18 @@ class BookshelfViewSet(ViewSet):
         serializer = BookshelfStorySerializer(bookshelf_stories, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-    # Method for adding a story
-    # POST /bookshelves/story
-
-    # Method for deleting a story
-    # DELETE /bookshelves/story
-
-    @action(methods=["post", "delete"], detail=False)
-    def story(self, request):
-        # get current bookshelf
-        current_user = UserProfile.objects.get(user=request.auth.user)
-        bookshelf = current_user.user.bookshelf
+    def create(self, request):
+        bookshelf = request.user.bookshelf
 
         if request.method == "POST":
             try:
                 story_to_add = Story.objects.get(pk=request.data["story_id"])
+
             except Story.DoesNotExist as ex:
                 return Response(
                     {"message": ex.args[0]}, status=status.HTTP_404_NOT_FOUND
                 )
+
             except Exception as ex:
                 return Response(
                     {"message": ex.args[0]},
@@ -55,6 +48,24 @@ class BookshelfViewSet(ViewSet):
             BookshelfStory.objects.create(bookshelf=bookshelf, story=story_to_add)
             serializer = BookshelfStorySerializer(bookshelf.stories, many=True)
             return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def destroy(self, request, pk=None):
+        try:
+            target_story = BookshelfStory.objects.get(
+                bookshelf=request.user.bookshelf, story__id=pk
+            )
+            target_story.delete()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        except BookshelfStory.DoesNotExist:
+            return Response(
+                {"message": "Story not found in bookshelf"},
+                status=status.HTTP_404_NOT_FOUND,
+            )
+        except Exception as ex:
+            return Response(
+                {"message": ex.args[0]},
+                status=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            )
 
 
 # SERIALIZERS
