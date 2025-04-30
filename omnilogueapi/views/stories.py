@@ -2,7 +2,7 @@ from django.http import HttpResponseServerError
 from rest_framework import serializers, status
 from rest_framework.response import Response
 from rest_framework.viewsets import ViewSet
-from omnilogueapi.models import Story
+from omnilogueapi.models import Story, Category, StorySection
 from .users import UserSerializer
 from .categories import CategorySerializer
 from .story_tags import StoryTagSerializer
@@ -32,6 +32,32 @@ class StoryViewSet(ViewSet):
             return Response(None, status=status.HTTP_404_NOT_FOUND)
         except Exception as ex:
             return Response({"reason": ex.args[0]}, status=status.HTTP_400_BAD_REQUEST)
+
+    def create(self, request):
+        story = Story()
+        story.author = request.user
+        story.title = request.data["title"]
+        story.subtitle = request.data["subtitle"]
+        story.description = request.data["description"]
+        story.excerpt = request.data["excerpt"]
+
+        category = Category.objects.get(name=request.data["category"])
+        story.category = category
+        story.save()
+
+        StorySection.objects.create(
+            story=story,
+            title=story.title,
+            content=request.data["content"],
+            order=1,
+            file_path="",
+        )
+
+        try:
+            serializer = StoryDetailSerializer(story, many=False)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        except Exception as ex:
+            return Response({"message": ex.args[0]}, status=status.HTTP_400_BAD_REQUEST)
 
 
 # SERIALIZERS:
