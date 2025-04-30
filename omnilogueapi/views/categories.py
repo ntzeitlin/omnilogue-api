@@ -6,7 +6,10 @@ from omnilogueapi.models import Category
 
 
 class CategoryViewSet(ViewSet):
-    pass
+    def list(self, request):
+        categories = Category.objects.all()
+        serializer = CategorySerializer(categories, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
 
 class CategorySerializer(serializers.ModelSerializer):
