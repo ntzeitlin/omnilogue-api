@@ -88,7 +88,7 @@ class StoryViewSet(ViewSet):
         try:
             story = Story.objects.get(pk=pk)
             story.delete()
-            return Response("Story has been Deleted", status=status.HTTP_204_NO_CONTENT)
+            return Response("Story has been Deleted", status=status.HTTP_200_OK)
         except Story.DoesNotExist:
             return Response(
                 {"message": "Story does not exist"}, status=status.HTTP_404_NOT_FOUND
