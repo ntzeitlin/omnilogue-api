@@ -82,7 +82,21 @@ class StoryViewSet(ViewSet):
         except Exception as ex:
             return HttpResponseServerError(ex)
 
-        return Response(None, status=status.HTTP_204_NO_CONTENT)
+        return Response("Deleted Successfully", status=status.HTTP_204_NO_CONTENT)
+
+    def destroy(self, request, pk=None):
+        try:
+            story = Story.objects.get(pk=pk)
+            story.delete()
+            return Response("Story has been Deleted", status=status.HTTP_204_NO_CONTENT)
+        except Story.DoesNotExist:
+            return Response(
+                {"message": "Story does not exist"}, status=status.HTTP_404_NOT_FOUND
+            )
+        except Exception as ex:
+            return Response(
+                {"message": ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
 
 
 # SERIALIZERS:
