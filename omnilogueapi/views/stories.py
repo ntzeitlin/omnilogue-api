@@ -59,6 +59,31 @@ class StoryViewSet(ViewSet):
         except Exception as ex:
             return Response({"message": ex.args[0]}, status=status.HTTP_400_BAD_REQUEST)
 
+    def update(self, request, pk=None):
+        try:
+            story = Story.objects.get(pk=pk)
+            story.title = request.data["title"]
+            story.subtitle = request.data["subtitle"]
+            story.description = request.data["description"]
+            story.excerpt = request.data["excerpt"]
+
+            category = Category.objects.get(name=request.data["category"])
+            story.category = category
+            story.save()
+
+            try:
+                story_section = StorySection.objects.get(story=story)
+                story_section.content = request.data["content"]
+                story_section.save()
+            except Exception as ex:
+                return Response(
+                    {"message": ex.args[0]}, status=status.HTTP_400_BAD_REQUEST
+                )
+        except Exception as ex:
+            return HttpResponseServerError(ex)
+
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
+
 
 # SERIALIZERS:
 class StoryOverviewSerializer(serializers.ModelSerializer):
