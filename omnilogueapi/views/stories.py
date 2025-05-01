@@ -47,16 +47,7 @@ class StoryViewSet(ViewSet):
 
         # content should be an array, for each section in the content array, generate a new story section
 
-        # StorySection.objects.create(
-        #     story=story,
-        #     title=story.title,
-        #     content=request.data["content"],
-        #     order=1,
-        #     file_path="",
-        # )
-
         story_content = request.data["content"]
-        print(story_content)
         count = 0
         for section in story_content:
             count = count + 1
@@ -122,8 +113,8 @@ class StoryViewSet(ViewSet):
 
         except Exception as ex:
             return HttpResponseServerError(ex)
-        serializer = StoryDetailSerializer(story, many=False)
-        return Response(serializer.data, status=status.HTTP_204_NO_CONTENT)
+        # serializer = StoryDetailSerializer(story, many=False)
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
 
     def destroy(self, request, pk=None):
         try:
