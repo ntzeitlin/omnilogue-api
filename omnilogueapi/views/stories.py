@@ -86,18 +86,44 @@ class StoryViewSet(ViewSet):
             story.category = category
             story.save()
 
-            try:
-                story_section = StorySection.objects.get(story=story)
-                story_section.content = request.data["content"]
-                story_section.save()
-            except Exception as ex:
-                return Response(
-                    {"message": ex.args[0]}, status=status.HTTP_400_BAD_REQUEST
-                )
+            story_content = request.data.get("content", [])
+
+            if story_content:
+                existing_sections = StorySection.objects.filter(story=story)
+
+            for index, section_data in enumerate(story_content):
+                section_id = section_data.get("id", None)
+
+                if section_id:
+                    try:
+                        section = existing_sections.get(pk=section_id)
+                        section.title = section_data.get("title", section.title)
+                        section.content = section_data.get("content", section.content)
+                        section.order = index + 1
+                        section.save()
+                    except StorySection.DoesNotExist:
+                        # Create a new section if the ID doesn't exist
+                        StorySection.objects.create(
+                            story=story,
+                            title=section_data.get("title", ""),
+                            content=section_data.get("content", ""),
+                            order=index + 1,
+                            file_path="",
+                        )
+                else:
+                    # Create a new section without ID
+                    StorySection.objects.create(
+                        story=story,
+                        title=section_data.get("title", ""),
+                        content=section_data.get("content", ""),
+                        order=index + 1,
+                        file_path="",
+                    )
+
         except Exception as ex:
             return HttpResponseServerError(ex)
-
-        return Response("Deleted Successfully", status=status.HTTP_204_NO_CONTENT)
+        serializer = StoryDetailSerializer(story, many=False)
+        return Response(serializer.data, status=status.HTTP_204_NO_CONTENT)
 
     def destroy(self, request, pk=None):
         try:
