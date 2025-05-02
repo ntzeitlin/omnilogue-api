@@ -139,6 +139,7 @@ class StoryOverviewSerializer(serializers.ModelSerializer):
     category = CategorySerializer(many=False, read_only=True)
     story_tags = StoryTagSerializer(many=True)
     average_rating = serializers.ReadOnlyField()
+    start_section = serializers.SerializerMethodField()
 
     class Meta:
         model = Story
@@ -151,7 +152,15 @@ class StoryOverviewSerializer(serializers.ModelSerializer):
             "category",
             "story_tags",
             "average_rating",
+            "start_section",
         )
+
+    def get_start_section(self, obj):
+        try:
+            section = obj.sections.get(order=1)
+            return StorySectionSerializer(section, many=False).data
+        except Exception:
+            return None
 
 
 class StoryDetailSerializer(serializers.ModelSerializer):
