@@ -9,6 +9,23 @@ from .story_tags import StoryTagSerializer
 from .story_sections import StorySectionSerializer
 
 
+def process_markdown_title(section_markdown):
+    if not section_markdown:
+        return "Default Title"
+
+    lines = section_markdown.split("\n")
+
+    header_text = "Default Title"
+
+    for line in lines:
+        stripped_line = line.strip()
+        if stripped_line.startswith("#"):
+            header_start = stripped_line.find("#")
+            header_text = stripped_line[header_start:].strip("#").strip()
+
+    return header_text
+
+
 class StoryViewSet(ViewSet):
     def list(self, request):
         """Handle GET requests for Stories
@@ -51,9 +68,10 @@ class StoryViewSet(ViewSet):
         count = 0
         for section in story_content:
             count = count + 1
+            print(process_markdown_title(section["content"]))
             StorySection.objects.create(
                 story=story,
-                title=section["title"],
+                title=process_markdown_title(section["content"]),
                 content=section["content"],
                 order=count,
                 file_path="",
