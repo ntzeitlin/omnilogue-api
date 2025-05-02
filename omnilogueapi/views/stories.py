@@ -20,8 +20,9 @@ def process_markdown_title(section_markdown):
     for line in lines:
         stripped_line = line.strip()
         if stripped_line.startswith("#"):
-            header_start = stripped_line.find("#")
-            header_text = stripped_line[header_start:].strip("#").strip()
+            if stripped_line.startswith("##"):
+                break
+            header_text = stripped_line.strip("#").strip()
 
     return header_text
 
