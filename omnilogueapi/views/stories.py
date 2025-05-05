@@ -142,7 +142,9 @@ class StoryViewSet(ViewSet):
                 if section_id:
                     try:
                         section = existing_sections.get(pk=section_id)
-                        section.title = section_data.get("title", section.title)
+                        section.title = process_markdown_title(
+                            section_data.get("content", section.content)
+                        )
                         section.content = section_data.get("content", section.content)
                         section.order = index + 1
                         section.save()
@@ -167,8 +169,11 @@ class StoryViewSet(ViewSet):
 
         except Exception as ex:
             return HttpResponseServerError(ex)
-        # serializer = StoryDetailSerializer(story, many=False)
-        return Response(None, status=status.HTTP_204_NO_CONTENT)
+
+        # GET STORY AGAIN BEFORE SENDING ON
+        story = Story.objects.get(pk=pk)
+        serializer = StoryDetailSerializer(story, many=False)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
     def destroy(self, request, pk=None):
         try:
