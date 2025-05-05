@@ -28,7 +28,31 @@ def process_markdown_title(section_markdown):
     return header_text
 
 
-def process_markdown_links(content, story):
+def process_markdown_links(section, story):
+    if not section.content:
+        return ""
+
+    print(f"Processing links for section {section.id} in story {story.id}")
+
+    pattern = r"(\[\[.*?\]\])"
+
+    segments = re.split(pattern, section.content)
+
+    for index, segment in enumerate(segments):
+        if segment.startswith("[[") and segment.endswith("]]"):
+            segment_title = segment[2:-2]
+            try:
+                target_section_id = StorySection.objects.get(
+                    story=story, title=segment_title
+                ).id
+                segments[index] = f"[{segment_title}]({target_section_id})"
+            except StorySection.DoesNotExist:
+                segments[index] = f"[{segment_title}](not-found)"
+
+    return "".join(segments)
+
+
+def process_markdown_links_content(content, story):
     if not content:
         return ""
 
@@ -151,7 +175,7 @@ class StoryViewSet(ViewSet):
                         # story = Story.objects.get(pk=pk)
                         # existing_sections = StorySection.objects.filter(story=story)
                         # section = existing_sections.get(pk=section_id)
-                        section.content = process_markdown_links(
+                        section.content = process_markdown_links_content(
                             section_data.get("content", section.content), story
                         )
                         section.order = index + 1
