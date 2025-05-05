@@ -24,6 +24,11 @@ As a writer, I created OMNILOGUE after discovering the potential of my Obsidian.
 
 - User Authentication: Secure login / registration system.
 
+## Tech Stack:
+- Django
+- Django REST Framework
+- SQLite3
+
 ## Getting Started:
 
 1. Clone the repository
