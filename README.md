@@ -34,7 +34,7 @@ As a writer, I created OMNILOGUE after discovering the potential of my Obsidian.
 1. Clone the repository
 	```
 	git clone git@github.com:ntzeitlin/omnilogue-api.git
-	cd omnilogue-api
+	cd omnilogueproject
 	``` 
 	
 2. Create a virtual environment
