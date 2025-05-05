@@ -7,6 +7,49 @@ from .users import UserSerializer
 from .categories import CategorySerializer
 from .story_tags import StoryTagSerializer
 from .story_sections import StorySectionSerializer
+import re
+
+
+def process_markdown_title(section_markdown):
+    if not section_markdown:
+        return "Default Title"
+
+    lines = section_markdown.split("\n")
+
+    header_text = "Default Title"
+
+    for line in lines:
+        stripped_line = line.strip()
+        if stripped_line.startswith("#"):
+            if stripped_line.startswith("##"):
+                break
+            header_text = stripped_line.strip("#").strip()
+
+    return header_text
+
+
+def process_markdown_links(section, story):
+    if not section.content:
+        return ""
+
+    print(f"Processing links for section {section.id} in story {story.id}")
+
+    pattern = r"(\[\[.*?\]\])"
+
+    segments = re.split(pattern, section.content)
+
+    for index, segment in enumerate(segments):
+        if segment.startswith("[[") and segment.endswith("]]"):
+            segment_title = segment[2:-2]
+            try:
+                target_section_id = StorySection.objects.get(
+                    story=story, title=segment_title
+                ).id
+                segments[index] = f"[{segment_title}]({target_section_id})"
+            except StorySection.DoesNotExist:
+                segments[index] = f"[{segment_title}](not-found)"
+
+    return "".join(segments)
 
 
 class StoryViewSet(ViewSet):
@@ -51,13 +94,24 @@ class StoryViewSet(ViewSet):
         count = 0
         for section in story_content:
             count = count + 1
+            section_title = process_markdown_title(section["content"])
             StorySection.objects.create(
                 story=story,
-                title=section["title"],
+                title=section_title,
                 content=section["content"],
                 order=count,
                 file_path="",
             )
+
+        # NOTE: Need to iterate through all sections after ALL sections are created.
+        #       Then, go into the section, find the links, find the StorySection that matches the link,
+        #       and replace that.
+
+        story_sections = StorySection.objects.filter(story=story)
+        for section in story_sections:
+            section_to_update = StorySection.objects.get(pk=section.id)
+            section_to_update.content = process_markdown_links(section, story)
+            section_to_update.save(update_fields=["content"])
 
         try:
             serializer = StoryDetailSerializer(story, many=False)
@@ -139,6 +193,7 @@ class StoryOverviewSerializer(serializers.ModelSerializer):
     category = CategorySerializer(many=False, read_only=True)
     story_tags = StoryTagSerializer(many=True)
     average_rating = serializers.ReadOnlyField()
+    start_section = serializers.SerializerMethodField()
 
     class Meta:
         model = Story
@@ -151,7 +206,15 @@ class StoryOverviewSerializer(serializers.ModelSerializer):
             "category",
             "story_tags",
             "average_rating",
+            "start_section",
         )
+
+    def get_start_section(self, obj):
+        try:
+            section = obj.sections.get(order=1)
+            return StorySectionSerializer(section, many=False).data
+        except Exception:
+            return None
 
 
 class StoryDetailSerializer(serializers.ModelSerializer):
