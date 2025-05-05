@@ -45,9 +45,7 @@ def process_markdown_links(section, story):
                 target_section_id = StorySection.objects.get(
                     story=story, title=segment_title
                 ).id
-                segments[index] = (
-                    f"[{segment_title}](/library/stories/{story.id}/read/{target_section_id})"
-                )
+                segments[index] = f"[{segment_title}]({target_section_id})"
             except StorySection.DoesNotExist:
                 segments[index] = f"[{segment_title}](not-found)"
 
