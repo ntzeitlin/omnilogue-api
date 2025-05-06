@@ -1,5 +1,5 @@
 # OMNILOGUE
-[OMNILOGUE Client](https://github.com/ntzeitlin/omnilogue-client)
+Requires: [OMNILOGUE Client](https://github.com/ntzeitlin/omnilogue-client)
 
 ## Overview:
 **OMNILOGUE** empowers markdown writers to publish their interconnected content without compromise. Writers currently face a painful choice: either flatten their rich, linked knowledge structures into linear documents or spend countless hours manually reformatting for existing platforms. OMNILOGUE solves this by enabling simple upload of Obsidian.md vaults (zipped directories of markdown files) while automatically preserving the folder structure, markdown formatting, and crucial network of bidirectional links. This gives authors a direct path to sharing their work exactly as envisioned, while providing readers with both traditional chapter navigation and the freedom to explore ideas non-linearly through bi-directional links.
@@ -51,3 +51,5 @@ As a writer, I created OMNILOGUE after discovering the potential of my Obsidian.
 
 4. Run the debugger in VSCode. Once running, API is available at:
     http://localhost:8000
+
+5. Download and install the [OMNILOGUE Client](https://github.com/ntzeitlin/omnilogue-client)
