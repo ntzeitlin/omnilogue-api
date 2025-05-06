@@ -169,12 +169,6 @@ class StoryViewSet(ViewSet):
                         section.title = process_markdown_title(
                             section_data.get("content", section.content)
                         )
-                        # section.save()
-
-                        # # Refetch sections after saving titles
-                        # story = Story.objects.get(pk=pk)
-                        # existing_sections = StorySection.objects.filter(story=story)
-                        # section = existing_sections.get(pk=section_id)
                         section.content = process_markdown_links_content(
                             section_data.get("content", section.content), story
                         )

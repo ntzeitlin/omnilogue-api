@@ -1,4 +1,3 @@
-# omnilogueapi/management/commands/process_stories.py
 from django.core.management.base import BaseCommand
 from omnilogueapi.models import Story, StorySection
 import re
