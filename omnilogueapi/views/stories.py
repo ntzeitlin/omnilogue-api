@@ -52,6 +52,30 @@ def process_markdown_links(section, story):
     return "".join(segments)
 
 
+def process_markdown_links_content(content, story):
+    if not content:
+        return ""
+
+    print(f"Processing links for in story {story.id}")
+
+    pattern = r"(\[\[.*?\]\])"
+
+    segments = re.split(pattern, content)
+
+    for index, segment in enumerate(segments):
+        if segment.startswith("[[") and segment.endswith("]]"):
+            segment_title = segment[2:-2]
+            try:
+                target_section_id = StorySection.objects.get(
+                    story=story, title=segment_title
+                ).id
+                segments[index] = f"[{segment_title}]({target_section_id})"
+            except StorySection.DoesNotExist:
+                segments[index] = f"[{segment_title}](not-found)"
+
+    return "".join(segments)
+
+
 class StoryViewSet(ViewSet):
     def list(self, request):
         """Handle GET requests for Stories
@@ -142,8 +166,12 @@ class StoryViewSet(ViewSet):
                 if section_id:
                     try:
                         section = existing_sections.get(pk=section_id)
-                        section.title = section_data.get("title", section.title)
-                        section.content = section_data.get("content", section.content)
+                        section.title = process_markdown_title(
+                            section_data.get("content", section.content)
+                        )
+                        section.content = process_markdown_links_content(
+                            section_data.get("content", section.content), story
+                        )
                         section.order = index + 1
                         section.save()
                     except StorySection.DoesNotExist:
@@ -167,8 +195,11 @@ class StoryViewSet(ViewSet):
 
         except Exception as ex:
             return HttpResponseServerError(ex)
-        # serializer = StoryDetailSerializer(story, many=False)
-        return Response(None, status=status.HTTP_204_NO_CONTENT)
+
+        # GET STORY AGAIN BEFORE SENDING ON
+        story = Story.objects.get(pk=pk)
+        serializer = StoryDetailSerializer(story, many=False)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
     def destroy(self, request, pk=None):
         try:
