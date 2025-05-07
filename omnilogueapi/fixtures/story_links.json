@@ -1,0 +1,29 @@
+[
+    {
+        "model": "omnilogueapi.storylink",
+        "pk": 1,
+        "fields": {
+          "source_section": 1,
+          "target_section": 2,
+          "link_text": "hack"
+        }
+      },
+      {
+        "model": "omnilogueapi.storylink",
+        "pk": 2,
+        "fields": {
+          "source_section": 1,
+          "target_section": 3,
+          "link_text": "subtle approach"
+        }
+      },
+      {
+        "model": "omnilogueapi.storylink",
+        "pk": 3,
+        "fields": {
+          "source_section": 2,
+          "target_section": 4,
+          "link_text": "hide the evidence"
+        }
+      }
+]

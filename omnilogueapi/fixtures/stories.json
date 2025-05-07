@@ -1,0 +1,98 @@
+[
+    {
+        "model": "omnilogueapi.story",
+        "pk": 1,
+        "fields": {
+          "author": 1,
+          "title": "Neon Dreams",
+          "subtitle": "A Tale of Silicon and Soul",
+          "description": "In a dystopian future where neural implants blur the line between human and machine, a programmer discovers a hidden code that might unravel the corporate stranglehold on human consciousness.",
+          "excerpt": "Alex's fingers danced across the holographic interface, each gesture triggering cascades of code that flickered in the air like digital fireflies. The neural link at the base of her skull hummed, resonating with each line of code she wrote. Tonight was the night she would break free.",
+          "is_public": true,
+          "created_at": "2022-10-25T14:22:18.764Z",
+          "updated_at": "2022-10-30T09:15:20.112Z",
+          "category": 1,
+          "is_interactive": true
+        }
+      },
+      {
+        "model": "omnilogueapi.story",
+        "pk": 2,
+        "fields": {
+          "author": 3,
+          "title": "Whispers of Eldertree",
+          "subtitle": "Chronicles of the Forgotten Realm",
+          "description": "When an ancient tree begins whispering secrets of a forgotten magic, a young scholar must navigate a world of hidden realms and mythical creatures to prevent an awakening darkness.",
+          "excerpt": "The first time Elara heard the tree speak, she thought she was dreaming. By the third time, she knew the world was far stranger than her dusty textbooks had ever revealed. 'Seek the seventh gate,' it whispered, its voice like rustling leaves, 'before the shadow finds you.'",
+          "is_public": true,
+          "created_at": "2022-10-26T16:45:33.921Z",
+          "updated_at": "2022-11-02T11:22:17.455Z",
+          "category": 2,
+          "is_interactive": false
+        }
+      },
+      {
+        "model": "omnilogueapi.story",
+        "pk": 3,
+        "fields": {
+          "author": 5,
+          "title": "The Linguist's Cipher",
+          "subtitle": "A Historical Mystery",
+          "description": "When a linguistics professor discovers an ancient manuscript with an unbreakable code, she finds herself entangled in a centuries-old mystery that could rewrite history—if she can stay alive long enough to solve it.",
+          "excerpt": "Dr. Eleanor Wright stared at the parchment, its indecipherable symbols mocking her expertise. Twenty years of studying dead languages, and she'd never seen anything like this. The courier who delivered it had warned her: 'Some secrets were meant to stay buried.'",
+          "is_public": true,
+          "created_at": "2022-10-28T09:12:45.233Z",
+          "updated_at": "2022-11-05T14:35:29.789Z",
+          "category": 3,
+          "is_interactive": false
+        }
+      },
+      {
+        "model": "omnilogueapi.story",
+        "pk": 4,
+        "fields": {
+          "author": 4,
+          "title": "Quantum Paradox",
+          "subtitle": "When Timelines Collide",
+          "description": "A quantum physicist's experiment goes awry, creating intersecting timelines where his past, present, and future selves must collaborate to prevent a paradox that threatens the fabric of reality.",
+          "excerpt": "Dr. Marcus Chen watched in horror as the quantum stabilizer readings spiked into the red. The lab shouldn't exist anymore—neither should he—yet here they were, caught in an impossible moment between was, is, and will be. Then the doorknob turned, and he faced himself.",
+          "is_public": false,
+          "created_at": "2022-11-01T11:33:09.412Z",
+          "updated_at": "2022-11-07T15:44:21.678Z",
+          "category": 1,
+          "is_interactive": true
+        }
+      },
+      {
+        "model": "omnilogueapi.story",
+        "pk": 5,
+        "fields": {
+          "author": 2,
+          "title": "Web Dev for Writers",
+          "subtitle": "Building Your Author Platform",
+          "description": "A comprehensive guide to creating and maintaining a professional author website, including practical tutorials on design principles, content strategy, and basic coding for writers.",
+          "excerpt": "Your author website is often the first impression readers get of your work. In this guide, we'll walk through the essential elements of an effective author platform, starting with the fundamental question: what do you want your website to accomplish?",
+          "is_public": true,
+          "created_at": "2022-10-30T08:55:17.321Z",
+          "updated_at": "2022-11-04T10:22:41.567Z",
+          "category": 5,
+          "is_interactive": false
+        }
+      },
+      {
+        "model": "omnilogueapi.story",
+        "pk": 6,
+        "fields": {
+          "author": 6,
+          "title": "The Digital Artisan",
+          "subtitle": "Crafting Interactive Narratives",
+          "description": "A practical exploration of designing interactive stories, combining elements of game design, UX principles, and narrative techniques to create engaging reader experiences.",
+          "excerpt": "Interactive storytelling exists at the intersection of narrative craft and user experience design. This guide explores how to create stories that respond meaningfully to reader choices while maintaining narrative coherence and emotional impact.",
+          "is_public": true,
+          "created_at": "2022-11-02T13:28:51.489Z",
+          "updated_at": "2022-11-08T09:17:33.912Z",
+          "category": 5,
+          "is_interactive": true
+        }
+      }
+]

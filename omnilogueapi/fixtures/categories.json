@@ -1,0 +1,42 @@
+[
+    {
+      "model": "omnilogueapi.category",
+      "pk": 1,
+      "fields": {
+        "name": "Science Fiction",
+        "description": "Stories that explore futuristic concepts such as advanced science and technology, space exploration, time travel, parallel universes, and extraterrestrial life."
+      }
+    },
+    {
+      "model": "omnilogueapi.category",
+      "pk": 2,
+      "fields": {
+        "name": "Fantasy",
+        "description": "Stories set in alternate worlds or our own world with magical elements, often featuring mythical creatures, magic, and hero quests."
+      }
+    },
+    {
+      "model": "omnilogueapi.category",
+      "pk": 3,
+      "fields": {
+        "name": "Mystery",
+        "description": "Stories that revolve around solving a crime, puzzle, or strange occurrence, often with a detective or amateur sleuth as the protagonist."
+      }
+    },
+    {
+      "model": "omnilogueapi.category",
+      "pk": 4,
+      "fields": {
+        "name": "Historical Fiction",
+        "description": "Stories set in the past that blend historical facts with fictional elements to create an engaging narrative."
+      }
+    },
+    {
+      "model": "omnilogueapi.category",
+      "pk": 5,
+      "fields": {
+        "name": "Non-fiction",
+        "description": "Factual works based on real events, people, and information, including memoirs, biographies, and educational texts."
+      }
+    }
+]

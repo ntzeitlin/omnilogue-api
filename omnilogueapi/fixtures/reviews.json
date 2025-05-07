@@ -1,0 +1,62 @@
+[
+    {
+        "model": "omnilogueapi.review",
+        "pk": 1,
+        "fields": {
+          "user": 2,
+          "story": 1,
+          "content": "Absolutely captivating story with a truly immersive cyberpunk atmosphere. The choice-based narrative feels meaningful, with decisions that significantly impact the story's direction. The protagonist's struggle against corporate control feels timely and relevant.",
+          "rating": 5,
+          "created_at": "2022-11-04T15:22:18.764Z",
+          "updated_at": "2022-11-04T15:22:18.764Z"
+        }
+      },
+      {
+        "model": "omnilogueapi.review",
+        "pk": 2,
+        "fields": {
+          "user": 3,
+          "story": 2,
+          "content": "As a fantasy writer myself, I'm deeply impressed by the world-building in this story. The magical system feels fresh and original, while still drawing on classic fantasy elements. Looking forward to seeing where the narrative goes!",
+          "rating": 4,
+          "created_at": "2022-11-05T10:45:33.921Z",
+          "updated_at": "2022-11-05T10:45:33.921Z"
+        }
+      },
+      {
+        "model": "omnilogueapi.review",
+        "pk": 3,
+        "fields": {
+          "user": 4,
+          "story": 3,
+          "content": "A brilliantly crafted mystery with an engaging protagonist. The historical elements are well-researched, and the cipher at the center of the plot is genuinely intriguing. My only critique is that some of the academic politics feels a bit cliché.",
+          "rating": 4,
+          "created_at": "2022-11-06T12:12:45.233Z",
+          "updated_at": "2022-11-06T12:12:45.233Z"
+        }
+      },
+      {
+        "model": "omnilogueapi.review",
+        "pk": 4,
+        "fields": {
+          "user": 5,
+          "story": 1,
+          "content": "The technical aspects of this story are impressively accurate for science fiction. The neural interface concepts feel plausible and well-thought-out. The interactive elements add an engaging layer to what might otherwise be a fairly standard cyberpunk narrative.",
+          "rating": 4,
+          "created_at": "2022-11-07T09:33:09.412Z",
+          "updated_at": "2022-11-07T09:33:09.412Z"
+        }
+      },
+      {
+        "model": "omnilogueapi.review",
+        "pk": 5,
+        "fields": {
+          "user": 6,
+          "story": 5,
+          "content": "This guide is incredibly practical and accessible for writers who, like me, don't have a strong technical background. The step-by-step instructions for setting up a basic author website answered questions I didn't even know I had. Highly recommended resource!",
+          "rating": 5,
+          "created_at": "2022-11-08T14:55:17.321Z",
+          "updated_at": "2022-11-08T14:55:17.321Z"
+        }
+      }
+]

@@ -1,0 +1,90 @@
+[
+    {
+        "model": "omnilogueapi.storytag",
+        "pk": 1,
+        "fields": {
+          "story": 1,
+          "tag": 1
+        }
+      },
+      {
+        "model": "omnilogueapi.storytag",
+        "pk": 2,
+        "fields": {
+          "story": 1,
+          "tag": 7
+        }
+      },
+      {
+        "model": "omnilogueapi.storytag",
+        "pk": 3,
+        "fields": {
+          "story": 2,
+          "tag": 2
+        }
+      },
+      {
+        "model": "omnilogueapi.storytag",
+        "pk": 4,
+        "fields": {
+          "story": 2,
+          "tag": 6
+        }
+      },
+      {
+        "model": "omnilogueapi.storytag",
+        "pk": 5,
+        "fields": {
+          "story": 2,
+          "tag": 8
+        }
+      },
+      {
+        "model": "omnilogueapi.storytag",
+        "pk": 6,
+        "fields": {
+          "story": 3,
+          "tag": 5
+        }
+      },
+      {
+        "model": "omnilogueapi.storytag",
+        "pk": 7,
+        "fields": {
+          "story": 3,
+          "tag": 9
+        }
+      },
+      {
+        "model": "omnilogueapi.storytag",
+        "pk": 8,
+        "fields": {
+          "story": 4,
+          "tag": 4
+        }
+      },
+      {
+        "model": "omnilogueapi.storytag",
+        "pk": 9,
+        "fields": {
+          "story": 4,
+          "tag": 7
+        }
+      },
+      {
+        "model": "omnilogueapi.storytag",
+        "pk": 10,
+        "fields": {
+          "story": 5,
+          "tag": 10
+        }
+      },
+      {
+        "model": "omnilogueapi.storytag",
+        "pk": 11,
+        "fields": {
+          "story": 6,
+          "tag": 10
+        }
+      }
+]
