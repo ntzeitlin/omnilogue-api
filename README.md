@@ -34,18 +34,18 @@ As a writer, I created OMNILOGUE after discovering the potential of my Obsidian.
 1. Clone the repository
 	```
 	git clone git@github.com:ntzeitlin/omnilogue-api.git
-	cd omnilogueproject
+ 	cd omnilogue-api
 	``` 
 	
-2. Create a virtual environment
+2. Install dependencies and create a virtual environment
 	```
-	python -m venv venv
-	source venv/bin/activate
+	pipenv install --dev
+ 	pipenv shell
 	```
 	
-3. Install dependencies and install the database
+3. Create the Database and initialize with data
 	```
-	pip install -r requirements.txt
+ 	touch db.sqlite3
 	./seed_database
 	```
 
