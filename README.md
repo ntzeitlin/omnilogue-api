@@ -57,4 +57,4 @@ As a writer, I created OMNILOGUE after discovering the potential of my Obsidian.
 ---
 
 ### Created by NTZ
-<a href="https://github.com/ntzeitlin" target="_blank"><img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white" alt="NTZ GitHub" style="height: auto !important;width: auto !important;" /></a> <a href="www.linkedin.com/in/nate-zeitlin" target="_blank"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" alt="NTZ LinkedIn" style="height: auto !important;width: auto !important;" /></a>
+<a href="https://github.com/ntzeitlin" target="_blank"><img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white" alt="NTZ GitHub" style="height: auto !important;width: auto !important;" /></a> <a href="http//www.linkedin.com/in/nate-zeitlin" target="_blank"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" alt="NTZ LinkedIn" style="height: auto !important;width: auto !important;" /></a>
