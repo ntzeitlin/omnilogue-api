@@ -12,8 +12,8 @@ class Story(models.Model):
     description = models.TextField()
     excerpt = models.TextField()
     is_public = models.BooleanField(default=False)
-    created_at = models.DateTimeField(auto_now_add=True)  # Add a timestamp on creation
-    updated_at = models.DateTimeField(auto_now=True)  # Add a timestamp on each save
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     category = models.ForeignKey(
         Category, on_delete=models.CASCADE, related_name="stories_in_category"
     )
