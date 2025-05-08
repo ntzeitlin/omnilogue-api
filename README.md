@@ -39,7 +39,7 @@ As a writer, I created OMNILOGUE after discovering the potential of my Obsidian.
 	
 2. Install dependencies and create a virtual environment
 	```
-	pipenv install --dev
+	pipenv install
  	pipenv shell
 	```
 	
